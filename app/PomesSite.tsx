@@ -1281,40 +1281,32 @@ function Footer({ lang, navigate }: { lang: Lang; navigate: (href: string) => vo
 }
 
 function FloatingButtons() {
-  const [nearFooter, setNearFooter] = useState(false);
-  const [afterIntro, setAfterIntro] = useState(false);
-
-  useEffect(() => {
-    const footer = document.querySelector(".site-footer");
-    if (!footer) return;
-    const observer = new IntersectionObserver(([entry]) => setNearFooter(entry.isIntersecting), {
-      rootMargin: "0px 0px -16% 0px",
-      threshold: 0,
-    });
-    observer.observe(footer);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const update = () => setAfterIntro(window.scrollY > 360);
-    update();
-    window.addEventListener("scroll", update, { passive: true });
-    return () => window.removeEventListener("scroll", update);
-  }, []);
+  const [open, setOpen] = useState(false);
 
   return (
-    <div className={`floating-actions${nearFooter ? " is-near-footer" : ""}${afterIntro ? " is-after-intro" : ""}`}>
-      <a href={`tel:${contact.phone}`} aria-label="Call POMES">
-        <span className="float-long">Call</span><span className="float-short">Call</span>
-      </a>
-      <a href={`https://zalo.me/${contact.phone}`} aria-label="Chat Zalo">
-        <span className="float-long">Zalo</span><span className="float-short">Zalo</span>
-      </a>
-      <a href={contact.facebook} aria-label="Facebook POMES">
-        <span className="float-long">Facebook</span><span className="float-short">FB</span>
-      </a>
-      <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} aria-label="Back to top">
-        <span className="float-long">Top</span><span className="float-short">Top</span>
+    <div className={`floating-actions${open ? " is-open" : ""}`}>
+      <div className="contact-menu" aria-hidden={!open}>
+        <a href={`tel:${contact.phone}`} aria-label="Call POMES">
+          Call
+        </a>
+        <a href={`https://zalo.me/${contact.phone}`} aria-label="Chat Zalo">
+          Zalo
+        </a>
+        <a href={contact.facebook} aria-label="Facebook POMES">
+          FB
+        </a>
+        <button
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            setOpen(false);
+          }}
+          aria-label="Back to top"
+        >
+          Top
+        </button>
+      </div>
+      <button className="contact-trigger" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-label="Mở liên hệ nhanh">
+        <span>Liên hệ</span>
       </button>
     </div>
   );
