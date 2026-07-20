@@ -1199,12 +1199,10 @@ p {
 }
 
 .site-footer img {
-  background: white;
   border-radius: 8px;
   height: 57px;
   margin-bottom: 16px;
   object-fit: contain;
-  padding: 6px;
   width: 69px;
 }
 
