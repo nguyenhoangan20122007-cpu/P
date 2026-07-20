@@ -81,15 +81,15 @@ const ui = {
   explore: { vi: "Khám phá giải pháp", en: "Explore solutions" },
   contactConsult: { vi: "Liên hệ tư vấn", en: "Request consultation" },
   callNow: { vi: "Gọi nhanh", en: "Call now" },
-  moreAbout: { vi: "Xem thêm về Pomes", en: "More about Pomes" },
+  moreAbout: { vi: "Xem thêm về POMES", en: "More about POMES" },
   detail: { vi: "Xem chi tiết", en: "View details" },
   quote: { vi: "Yêu cầu báo giá", en: "Request quote" },
   updating: { vi: "Đang cập nhật.", en: "Updating." },
   sample: { vi: "Nội dung mẫu", en: "Sample content" },
   contactPrice: { vi: "Liên hệ để nhận báo giá.", en: "Contact us for a quotation." },
   success: {
-    vi: "Cảm ơn bạn đã liên hệ. Pomes sẽ phản hồi trong thời gian sớm nhất.",
-    en: "Thank you for contacting Pomes. We will respond as soon as possible.",
+    vi: "Cảm ơn bạn đã liên hệ. POMES sẽ phản hồi trong thời gian sớm nhất.",
+    en: "Thank you for contacting POMES. We will respond as soon as possible.",
   },
 };
 
@@ -628,7 +628,7 @@ function HomePage({ lang, navigate, submitForm }: { lang: Lang; navigate: (href:
           <h2>{lang === "vi" ? "Tư vấn cải tiến, thiết kế, chế tạo và tự động hóa" : "Improvement consulting, design, fabrication and automation"}</h2>
           <p>{pptProfile.intro[lang]}</p>
           <p>{lang === "vi" ? "Mục tiêu là giúp doanh nghiệp nâng cao năng suất sản xuất, giảm nhân công, nâng cao sự an toàn và cải thiện chất lượng sản phẩm." : "The goal is to help businesses increase production productivity, reduce labor, improve safety and improve product quality."}</p>
-          <p>{lang === "vi" ? "Pomes cũng cung cấp thiết bị công nghiệp trong lĩnh vực cơ khí, điện, tự động, khí nén từ MISUMI, Mitsubishi, Delta, SMC, LS và các nhà sản xuất lớn trên thế giới." : "Pomes also supplies mechanical, electrical, automation and pneumatic industrial equipment from MISUMI, Mitsubishi, Delta, SMC, LS and major global manufacturers."}</p>
+          <p>{lang === "vi" ? "POMES cũng cung cấp thiết bị công nghiệp trong lĩnh vực cơ khí, điện, tự động, khí nén từ MISUMI, Mitsubishi, Delta, SMC, LS và các nhà sản xuất lớn trên thế giới." : "POMES also supplies mechanical, electrical, automation and pneumatic industrial equipment from MISUMI, Mitsubishi, Delta, SMC, LS and major global manufacturers."}</p>
           <button className="btn secondary" onClick={() => navigate("/gioi-thieu")}>{ui.moreAbout[lang]}</button>
         </div>
         <div className="metal-panel">
@@ -651,7 +651,7 @@ function HomePathways({ lang, navigate }: { lang: Lang; navigate: (href: string)
     {
       href: "/gioi-thieu",
       image: "/ppt-assets/profile-design.webp",
-      title: { vi: "Tìm hiểu về Pomes", en: "About Pomes" },
+      title: { vi: "Tìm hiểu về POMES", en: "About POMES" },
       desc: {
         vi: "Thông tin công ty, định hướng giải pháp và năng lực hiện có.",
         en: "Company information, solution direction and current capabilities.",
@@ -726,10 +726,10 @@ function ProfileFromDeck({ lang, navigate, compact = false }: { lang: Lang; navi
           </article>
         </div>
         <blockquote>{pptProfile.closing[lang]}</blockquote>
-        <button className="btn secondary" onClick={() => navigate("/dich-vu")}>{lang === "vi" ? "Xem dịch vụ Pomes" : "View Pomes services"}</button>
+        <button className="btn secondary" onClick={() => navigate("/dich-vu")}>{lang === "vi" ? "Xem dịch vụ POMES" : "View POMES services"}</button>
       </div>
       <div className="profile-visual">
-        <img src="/ppt-assets/profile-design.webp" alt={lang === "vi" ? "Kỹ sư thiết kế 3D trong hồ sơ năng lực Pomes" : "3D design engineer from Pomes profile"} loading="lazy" />
+        <img src="/ppt-assets/profile-design.webp" alt={lang === "vi" ? "Kỹ sư thiết kế 3D trong hồ sơ năng lực POMES" : "3D design engineer from POMES profile"} loading="lazy" />
       </div>
     </section>
   );
@@ -769,7 +769,7 @@ function AboutPage({ lang, navigate }: { lang: Lang; navigate: (href: string) =>
         </article>
         <article>
           <h2>{lang === "vi" ? "Năng lực sản xuất" : "Production capability"}</h2>
-          <p>{lang === "vi" ? "Pomes đang trong giai đoạn mới thành lập. Các thông tin chi tiết về xưởng, máy móc, công suất sản xuất và hồ sơ năng lực sẽ được cập nhật khi có dữ liệu chính thức." : "Pomes is newly established. Details about workshop, machinery, production capacity and capability documents will be updated when official data is available."}</p>
+          <p>{lang === "vi" ? "POMES đang trong giai đoạn mới thành lập. Các thông tin chi tiết về xưởng, máy móc, công suất sản xuất và hồ sơ năng lực sẽ được cập nhật khi có dữ liệu chính thức." : "POMES is newly established. Details about workshop, machinery, production capacity and capability documents will be updated when official data is available."}</p>
         </article>
         <article>
           <h2>{lang === "vi" ? "Định hướng giải pháp" : "Solution direction"}</h2>
@@ -956,7 +956,7 @@ function ProjectsPage({ lang, compact = false }: { lang: Lang; compact?: boolean
       {!compact && <PageIntro title={lang === "vi" ? "Dự án tiêu biểu" : "Featured projects"} subtitle={lang === "vi" ? "Khu vực dự án sẵn sàng cho ảnh trước và sau, hạng mục, kết quả và thông tin thực hiện." : "Project area prepared for before/after images, scope, results and implementation information."} />}
       {compact && <h2>{lang === "vi" ? "Dự án tiêu biểu" : "Featured projects"}</h2>}
       <div className="empty-state">
-        <strong>{lang === "vi" ? "Các dự án tiêu biểu của Pomes đang được cập nhật." : "Pomes featured projects are being updated."}</strong>
+        <strong>{lang === "vi" ? "Các dự án tiêu biểu của POMES đang được cập nhật." : "POMES featured projects are being updated."}</strong>
         <p>{lang === "vi" ? "Không tự tạo tên khách hàng, số liệu hoặc hình ảnh dự án khi chưa có dữ liệu được cung cấp." : "No customer names, figures or project images are invented before verified data is provided."}</p>
       </div>
     </section>
@@ -999,10 +999,10 @@ function NewsDetail({ lang }: { lang: Lang }) {
 function CareersPage({ lang, submitForm }: { lang: Lang; submitForm: (event: FormEvent<HTMLFormElement>) => void }) {
   return (
     <>
-      <PageHero lang={lang} title={lang === "vi" ? "Tuyển dụng" : "Careers"} subtitle={lang === "vi" ? "Cơ hội nghề nghiệp tại Pomes." : "Career opportunities at Pomes."} />
+      <PageHero lang={lang} title={lang === "vi" ? "Tuyển dụng" : "Careers"} subtitle={lang === "vi" ? "Cơ hội nghề nghiệp tại POMES." : "Career opportunities at POMES."} />
       <section className="section detail-layout">
         <div className="empty-state">
-          <strong>{lang === "vi" ? "Hiện tại Pomes chưa có vị trí tuyển dụng. Vui lòng theo dõi website để cập nhật những cơ hội mới." : "Pomes currently has no open positions. Please follow the website for future opportunities."}</strong>
+          <strong>{lang === "vi" ? "Hiện tại POMES chưa có vị trí tuyển dụng. Vui lòng theo dõi website để cập nhật những cơ hội mới." : "POMES currently has no open positions. Please follow the website for future opportunities."}</strong>
         </div>
         <aside className="detail-side">
           <h3>{lang === "vi" ? "Gửi CV quan tâm" : "Send CV interest"}</h3>
@@ -1088,7 +1088,7 @@ function LegalPage({ lang, type }: { lang: Lang; type: "privacy" | "terms" }) {
     <>
       <PageHero lang={lang} title={isPrivacy ? (lang === "vi" ? "Chính sách bảo mật" : "Privacy policy") : (lang === "vi" ? "Điều khoản sử dụng" : "Terms of use")} subtitle={lang === "vi" ? "Nội dung có thể được quản trị viên cập nhật theo yêu cầu pháp lý thực tế." : "Content can be updated by administrators according to actual legal requirements."} />
       <section className="section legal">
-        <p>{lang === "vi" ? "Pomes thu thập thông tin người dùng chỉ nhằm mục đích phản hồi tư vấn, báo giá và hỗ trợ kỹ thuật. Các điều khoản vận hành website, cookie, phân tích truy cập và biểu mẫu có thể được cập nhật khi tích hợp hệ thống thật." : "Pomes collects user information only to respond to consultation, quotation and technical support requests. Website operation terms, cookies, analytics and form handling can be updated when the production system is integrated."}</p>
+        <p>{lang === "vi" ? "POMES thu thập thông tin người dùng chỉ nhằm mục đích phản hồi tư vấn, báo giá và hỗ trợ kỹ thuật. Các điều khoản vận hành website, cookie, phân tích truy cập và biểu mẫu có thể được cập nhật khi tích hợp hệ thống thật." : "POMES collects user information only to respond to consultation, quotation and technical support requests. Website operation terms, cookies, analytics and form handling can be updated when the production system is integrated."}</p>
       </section>
     </>
   );
@@ -1107,7 +1107,7 @@ function NotFound({ lang, navigate }: { lang: Lang; navigate: (href: string) => 
 function ServiceGrid({ lang, navigate, title }: { lang: Lang; navigate: (href: string) => void; title: string }) {
   return (
     <section className="section">
-      <PageIntro title={title} subtitle={lang === "vi" ? "Các nhóm dịch vụ chính của Pomes được thiết kế cho nhu cầu cải tiến và vận hành sản xuất." : "Pomes core service groups are designed for manufacturing improvement and operation needs."} />
+      <PageIntro title={title} subtitle={lang === "vi" ? "Các nhóm dịch vụ chính của POMES được thiết kế cho nhu cầu cải tiến và vận hành sản xuất." : "POMES core service groups are designed for manufacturing improvement and operation needs."} />
       <div className="service-grid">
         {services.map((service, index) => (
           <article className="service-card reveal" key={service.slug}>
@@ -1159,7 +1159,7 @@ function ProductCard({ product, lang, navigate }: { product: (typeof products)[n
 function CapabilitiesBand({ lang }: { lang: Lang }) {
   return (
     <section className="section capability-band">
-      <PageIntro title={lang === "vi" ? "Năng lực Pomes" : "Pomes capabilities"} subtitle={lang === "vi" ? "Do công ty mới thành lập, khu vực số liệu được thiết kế để cập nhật sau, không tự tạo số liệu chưa có căn cứ." : "Because the company is newly established, numeric metrics are designed for later updates and no unsupported figures are invented."} />
+      <PageIntro title={lang === "vi" ? "Năng lực POMES" : "POMES capabilities"} subtitle={lang === "vi" ? "Do công ty mới thành lập, khu vực số liệu được thiết kế để cập nhật sau, không tự tạo số liệu chưa có căn cứ." : "Because the company is newly established, numeric metrics are designed for later updates and no unsupported figures are invented."} />
       <div className="metric-grid">
         {capabilityItems.map((item) => <article key={item.vi}><span>{lang === "vi" ? "Có thể cập nhật số liệu" : "Metrics editable"}</span><strong>{item[lang]}</strong></article>)}
       </div>
@@ -1181,7 +1181,7 @@ function ProcessTimeline({ lang }: { lang: Lang }) {
         ))}
       </div>
       <div className="workflow-preview">
-        <img src="/ppt-assets/workflow.webp" alt={lang === "vi" ? "Quy trình làm việc Pomes từ hồ sơ năng lực" : "Pomes workflow from company profile"} loading="lazy" />
+        <img src="/ppt-assets/workflow.webp" alt={lang === "vi" ? "Quy trình làm việc POMES từ hồ sơ năng lực" : "POMES workflow from company profile"} loading="lazy" />
       </div>
     </section>
   );
@@ -1191,7 +1191,7 @@ function BrandBand({ lang }: { lang: Lang }) {
   return (
     <section className="section brand-band">
       <h2>{lang === "vi" ? "Thương hiệu thiết bị" : "Equipment brands"}</h2>
-      <p>{lang === "vi" ? "Pomes cung cấp các thiết bị và linh kiện công nghiệp đến từ những thương hiệu uy tín trên thế giới." : "Pomes supplies industrial equipment and components from trusted global brands."}</p>
+      <p>{lang === "vi" ? "POMES cung cấp các thiết bị và linh kiện công nghiệp đến từ những thương hiệu uy tín trên thế giới." : "POMES supplies industrial equipment and components from trusted global brands."}</p>
       <div>{brands.map((brand) => <span key={brand}>{brand}</span>)}</div>
     </section>
   );
@@ -1203,7 +1203,7 @@ function QuickContact({ lang, submitForm }: { lang: Lang; submitForm: (event: Fo
       <div>
         <p className="eyebrow">{lang === "vi" ? "Tư vấn nhanh" : "Quick consultation"}</p>
         <h2>{lang === "vi" ? "Bạn đang cần cải tiến máy móc hoặc tự động hóa dây chuyền?" : "Do you need machine improvement or line automation?"}</h2>
-        <p>{lang === "vi" ? "Hãy mô tả nhu cầu của doanh nghiệp. Đội ngũ Pomes sẽ liên hệ để khảo sát và tư vấn giải pháp phù hợp." : "Describe your company needs. The Pomes team will contact you to survey and recommend a suitable solution."}</p>
+        <p>{lang === "vi" ? "Hãy mô tả nhu cầu của doanh nghiệp. Đội ngũ POMES sẽ liên hệ để khảo sát và tư vấn giải pháp phù hợp." : "Describe your company needs. The POMES team will contact you to survey and recommend a suitable solution."}</p>
       </div>
       <ContactForm lang={lang} submitForm={submitForm} compact />
     </section>
@@ -1252,7 +1252,7 @@ function Footer({ lang, navigate }: { lang: Lang; navigate: (href: string) => vo
         <div>
           <img src="/logo.png" alt="POMES logo" />
           <h3>{company.shortName}</h3>
-          <p>{lang === "vi" ? "Pomes tư vấn giải pháp cải tiến, thiết kế, chế tạo máy móc, hệ thống tự động và cung cấp thiết bị công nghiệp cho doanh nghiệp sản xuất." : "Pomes provides consulting for improvement solutions, machine design, fabrication, automation systems and industrial equipment for manufacturers."}</p>
+          <p>{lang === "vi" ? "POMES tư vấn giải pháp cải tiến, thiết kế, chế tạo máy móc, hệ thống tự động và cung cấp thiết bị công nghiệp cho doanh nghiệp sản xuất." : "POMES provides consulting for improvement solutions, machine design, fabrication, automation systems and industrial equipment for manufacturers."}</p>
         </div>
         <div>
           <h3>{lang === "vi" ? "Liên kết nhanh" : "Quick links"}</h3>

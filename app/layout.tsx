@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     description,
     siteName: "POMES CO.,LTD",
     type: "website",
-    images: [{ url: "/og.png", width: 1600, height: 900, alt: "Pomes engineering and automation solutions" }],
+    images: [{ url: "/og.png", width: 1600, height: 900, alt: "POMES engineering and automation solutions" }],
   },
   twitter: {
     card: "summary_large_image",
