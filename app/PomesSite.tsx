@@ -1281,8 +1281,21 @@ function Footer({ lang, navigate }: { lang: Lang; navigate: (href: string) => vo
 }
 
 function FloatingButtons() {
+  const [nearFooter, setNearFooter] = useState(false);
+
+  useEffect(() => {
+    const footer = document.querySelector(".site-footer");
+    if (!footer) return;
+    const observer = new IntersectionObserver(([entry]) => setNearFooter(entry.isIntersecting), {
+      rootMargin: "0px 0px -16% 0px",
+      threshold: 0,
+    });
+    observer.observe(footer);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="floating-actions">
+    <div className={`floating-actions${nearFooter ? " is-near-footer" : ""}`}>
       <a href={`tel:${contact.phone}`} aria-label="Call POMES">
         <span className="float-long">Call</span><span className="float-short">Call</span>
       </a>

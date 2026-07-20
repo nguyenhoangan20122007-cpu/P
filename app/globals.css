@@ -1193,6 +1193,7 @@ p {
   gap: 8px;
   position: fixed;
   right: 18px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
   z-index: 40;
 }
 
@@ -1487,6 +1488,12 @@ p {
     transform: translateX(-50%);
     width: auto;
     z-index: 60;
+  }
+
+  .floating-actions.is-near-footer {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 10px);
   }
 
   .floating-actions a,
