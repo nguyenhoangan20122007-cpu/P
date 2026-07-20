@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     "Giải pháp kỹ thuật tại TP.HCM",
   ],
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
+    icon: "/favicon-pomes.png",
+    shortcut: "/favicon-pomes.png",
+    apple: "/favicon-pomes.png",
   },
   openGraph: {
     title,
