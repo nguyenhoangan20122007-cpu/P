@@ -1,0 +1,3 @@
+POMES website deploy marker
+Commit target: mobile layout fix with cache-busted logo assets
+Updated: 2026-07-20
