@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
-const title = "Công ty TNHH Pomes | Cải tiến, chế tạo máy và tự động hóa";
+const title = "CÔNG TY TNHH GIẢI PHÁP KỸ THUẬT POMES | Cải tiến, chế tạo máy và tự động hóa";
 const description =
-  "Công ty TNHH Pomes tư vấn giải pháp cải tiến, thiết kế, chế tạo máy móc, hệ thống tự động và cung cấp thiết bị công nghiệp cơ khí, điện, tự động, khí nén tại TP.HCM.";
+  "CÔNG TY TNHH GIẢI PHÁP KỸ THUẬT POMES tư vấn giải pháp cải tiến, thiết kế, chế tạo máy móc, hệ thống tự động và cung cấp thiết bị công nghiệp cơ khí, điện, tự động, khí nén tại TP.HCM.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://pomes-pi.vercel.app"),
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title,
     description,
-    siteName: "Công ty TNHH Pomes",
+    siteName: "POMES CO.,LTD",
     type: "website",
     images: [{ url: "/og.png", width: 1600, height: 900, alt: "Pomes engineering and automation solutions" }],
   },

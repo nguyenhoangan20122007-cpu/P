@@ -33,15 +33,17 @@ const contact = {
 };
 
 const company = {
-  name: { vi: "Công ty TNHH Pomes", en: "Pomes Co., Ltd." },
-  legalName: { vi: "CÔNG TY TNHH POMES", en: "POMES CO., LTD." },
+  name: { vi: "CÔNG TY TNHH GIẢI PHÁP KỸ THUẬT POMES", en: "POMES ENGINEERING SOLUTIONS COMPANY LIMITED" },
+  legalName: { vi: "CÔNG TY TNHH GIẢI PHÁP KỸ THUẬT POMES", en: "POMES ENGINEERING SOLUTIONS COMPANY LIMITED" },
+  foreignName: "POMES ENGINEERING SOLUTIONS COMPANY LIMITED",
+  shortName: "POMES CO.,LTD",
   slogan: {
     vi: "Chi tiết chính xác - Quy trình hiệu quả",
     en: "Precise details - Effective processes",
   },
   history: {
-    vi: "Pomes là công ty mới thành lập, tập trung cung cấp các giải pháp kỹ thuật thực tiễn cho doanh nghiệp sản xuất.",
-    en: "Pomes is newly established and focuses on practical engineering solutions for manufacturing businesses.",
+    vi: "POMES là công ty mới thành lập, tập trung cung cấp các giải pháp kỹ thuật thực tiễn cho doanh nghiệp sản xuất.",
+    en: "POMES is newly established and focuses on practical engineering solutions for manufacturing businesses.",
   },
 };
 
@@ -399,11 +401,11 @@ export default function PomesSite({ initialPath = "/" }: { initialPath?: string 
   }, []);
 
   useEffect(() => {
-    const title = lang === "vi" ? "Công ty TNHH Pomes | Giải pháp cải tiến, chế tạo máy và tự động hóa" : "Pomes Co., Ltd. | Improvement, machine fabrication and automation solutions";
+    const title = lang === "vi" ? "CÔNG TY TNHH GIẢI PHÁP KỸ THUẬT POMES | Cải tiến, chế tạo máy và tự động hóa" : "POMES ENGINEERING SOLUTIONS COMPANY LIMITED | Improvement, machine fabrication and automation solutions";
     const desc =
       lang === "vi"
-        ? "Công ty TNHH Pomes tư vấn giải pháp cải tiến, thiết kế, chế tạo máy móc, hệ thống tự động và cung cấp thiết bị công nghiệp tại TP.HCM."
-        : "Pomes Co., Ltd. provides consulting for improvement solutions, machine design, fabrication, automation systems and industrial equipment in Ho Chi Minh City.";
+        ? "CÔNG TY TNHH GIẢI PHÁP KỸ THUẬT POMES tư vấn giải pháp cải tiến, thiết kế, chế tạo máy móc, hệ thống tự động và cung cấp thiết bị công nghiệp tại TP.HCM."
+        : "POMES ENGINEERING SOLUTIONS COMPANY LIMITED provides consulting for improvement solutions, machine design, fabrication, automation systems and industrial equipment in Ho Chi Minh City.";
     document.title = title;
     setMeta("description", desc);
     setMeta("keywords", "Giải pháp tự động hóa, thiết kế chế tạo máy, cải tiến máy móc, gia công cơ khí chính xác, quét 3D công nghiệp, thiết bị công nghiệp, TP.HCM");
@@ -512,7 +514,7 @@ export default function PomesSite({ initialPath = "/" }: { initialPath?: string 
             "@context": "https://schema.org",
             "@type": "Organization",
             name: company.legalName.vi,
-            alternateName: company.name.en,
+            alternateName: [company.foreignName, company.shortName],
             url: typeof window !== "undefined" ? window.location.origin : "",
             logo: "/logo.jpg",
             telephone: contact.phone,
@@ -608,8 +610,9 @@ function HomePage({ lang, navigate, submitForm }: { lang: Lang; navigate: (href:
       <section className="hero">
         <div className="hero-bg" />
         <div className="hero-content reveal">
-          <p className="eyebrow">{company.name.en}</p>
+          <p className="eyebrow">{company.shortName}</p>
           <h1>{company.name[lang]}</h1>
+          <p className="company-alias">{lang === "vi" ? company.foreignName : company.shortName}</p>
           <p className="slogan">{company.slogan[lang]}</p>
           <p>{pptProfile.intro[lang]}</p>
           <div className="hero-actions">
@@ -736,9 +739,26 @@ function AboutPage({ lang, navigate }: { lang: Lang; navigate: (href: string) =>
   const core = lang === "vi" ? ["Chính xác", "Hiệu quả", "Sáng tạo", "Trách nhiệm", "Đồng hành", "Cải tiến liên tục"] : ["Precision", "Efficiency", "Creativity", "Responsibility", "Partnership", "Continuous improvement"];
   return (
     <>
-      <PageHero lang={lang} title={lang === "vi" ? "Giới thiệu Công ty TNHH Pomes" : "About Pomes Co., Ltd."} subtitle={company.history[lang]} />
+      <PageHero lang={lang} title={lang === "vi" ? "Giới thiệu POMES" : "About POMES"} subtitle={company.history[lang]} />
       <ProfileFromDeck lang={lang} navigate={navigate} compact />
       <section className="section prose-grid">
+        <article>
+          <h2>{lang === "vi" ? "Thông tin doanh nghiệp" : "Company names"}</h2>
+          <dl className="company-name-list">
+            <div>
+              <dt>{lang === "vi" ? "Tên tiếng Việt" : "Vietnamese name"}</dt>
+              <dd>{company.legalName.vi}</dd>
+            </div>
+            <div>
+              <dt>{lang === "vi" ? "Tên tiếng nước ngoài" : "Foreign name"}</dt>
+              <dd>{company.foreignName}</dd>
+            </div>
+            <div>
+              <dt>{lang === "vi" ? "Tên viết tắt" : "Abbreviated name"}</dt>
+              <dd>{company.shortName}</dd>
+            </div>
+          </dl>
+        </article>
         <article>
           <h2>{lang === "vi" ? "Lịch sử hình thành" : "Formation"}</h2>
           <p>{company.history[lang]}</p>
@@ -996,10 +1016,12 @@ function CareersPage({ lang, submitForm }: { lang: Lang; submitForm: (event: For
 function ContactPage({ lang, submitForm }: { lang: Lang; submitForm: (event: FormEvent<HTMLFormElement>) => void }) {
   return (
     <>
-      <PageHero lang={lang} title={lang === "vi" ? "Liên hệ Công ty TNHH Pomes" : "Contact Pomes Co., Ltd."} subtitle={lang === "vi" ? "Thông tin liên hệ chính thức và form gửi yêu cầu tư vấn." : "Official contact information and consultation request form."} />
+      <PageHero lang={lang} title={lang === "vi" ? "Liên hệ POMES" : "Contact POMES"} subtitle={lang === "vi" ? "Thông tin liên hệ chính thức và form gửi yêu cầu tư vấn." : "Official contact information and consultation request form."} />
       <section className="section contact-layout">
         <div className="contact-info">
-          <h2>{company.name.vi}</h2>
+          <h2>{company.legalName.vi}</h2>
+          <p><strong>{lang === "vi" ? "Tên tiếng nước ngoài" : "Foreign name"}:</strong> {company.foreignName}</p>
+          <p><strong>{lang === "vi" ? "Tên viết tắt" : "Abbreviated name"}:</strong> {company.shortName}</p>
           <p><strong>{lang === "vi" ? "Địa chỉ" : "Address"}:</strong> {contact.address}</p>
           <p><strong>{lang === "vi" ? "Số điện thoại" : "Phone"}:</strong> {contact.phone}</p>
           <p><strong>Zalo:</strong> {contact.phone}</p>
@@ -1229,6 +1251,7 @@ function Footer({ lang, navigate }: { lang: Lang; navigate: (href: string) => vo
       <div className="footer-grid">
         <div>
           <img src="/logo.jpg" alt="POMES logo" />
+          <h3>{company.shortName}</h3>
           <p>{lang === "vi" ? "Pomes tư vấn giải pháp cải tiến, thiết kế, chế tạo máy móc, hệ thống tự động và cung cấp thiết bị công nghiệp cho doanh nghiệp sản xuất." : "Pomes provides consulting for improvement solutions, machine design, fabrication, automation systems and industrial equipment for manufacturers."}</p>
         </div>
         <div>
@@ -1249,7 +1272,7 @@ function Footer({ lang, navigate }: { lang: Lang; navigate: (href: string) => vo
         </div>
       </div>
       <div className="footer-bottom">
-        <span>© 2026 Công ty TNHH Pomes. All rights reserved.</span>
+        <span>© 2026 {company.legalName.vi}. All rights reserved.</span>
         <button onClick={() => navigate("/chinh-sach-bao-mat")}>{lang === "vi" ? "Chính sách bảo mật" : "Privacy"}</button>
         <button onClick={() => navigate("/dieu-khoan-su-dung")}>{lang === "vi" ? "Điều khoản sử dụng" : "Terms"}</button>
       </div>
@@ -1271,7 +1294,7 @@ function FloatingButtons() {
 function PageHero({ lang, title, subtitle }: { lang: Lang; title: string; subtitle: string }) {
   return (
     <section className="page-hero">
-      <p className="eyebrow">{company.name.en}</p>
+      <p className="eyebrow">{company.shortName}</p>
       <h1>{title}</h1>
       <p>{subtitle}</p>
     </section>

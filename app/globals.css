@@ -272,6 +272,14 @@ img {
   text-transform: uppercase;
 }
 
+.company-alias {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: clamp(14px, 1.4vw, 18px);
+  font-weight: 800;
+  letter-spacing: 0;
+  margin: 0 0 12px;
+}
+
 h1,
 h2,
 h3,
@@ -879,6 +887,30 @@ p {
 .prose-grid article {
   border-left: 4px solid #0ea5e9;
   padding-left: 22px;
+}
+
+.company-name-list {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+}
+
+.company-name-list div {
+  display: grid;
+  gap: 4px;
+}
+
+.company-name-list dt {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.company-name-list dd {
+  color: var(--navy);
+  font-weight: 900;
+  margin: 0;
 }
 
 .check-list {
