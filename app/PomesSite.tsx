@@ -4,6 +4,25 @@ import { FormEvent, useEffect, useMemo, useState } from "react";
 
 type Lang = "vi" | "en";
 type Copy = Record<Lang, string>;
+type PageKey =
+  | "home"
+  | "about"
+  | "services"
+  | "service-detail"
+  | "products"
+  | "product-detail"
+  | "capabilities"
+  | "process"
+  | "projects"
+  | "project-detail"
+  | "news"
+  | "news-detail"
+  | "careers"
+  | "contact"
+  | "admin"
+  | "privacy"
+  | "terms"
+  | "not-found";
 
 const contact = {
   phone: "0937461186",
@@ -336,7 +355,7 @@ function localized(value: Copy, lang: Lang) {
   return value[lang];
 }
 
-function routeKey(pathname: string) {
+function routeKey(pathname: string): PageKey {
   const clean = pathname.replace(/\/$/, "") || "/";
   if (clean === "/") return "home";
   if (clean.startsWith("/gioi-thieu")) return "about";
