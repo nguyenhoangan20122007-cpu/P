@@ -516,7 +516,7 @@ export default function PomesSite({ initialPath = "/" }: { initialPath?: string 
             name: company.legalName.vi,
             alternateName: [company.foreignName, company.shortName],
             url: typeof window !== "undefined" ? window.location.origin : "",
-            logo: "/logo.jpg",
+            logo: "/logo.png",
             telephone: contact.phone,
             email: contact.email,
             address: contact.address,
@@ -557,7 +557,7 @@ function Header({
   return (
     <header className="site-header">
       <a className="brand" href="/" onClick={(event) => { event.preventDefault(); navigate("/"); }}>
-        <img src="/logo.jpg" alt="POMES logo" />
+        <img src="/logo.png" alt="POMES logo" />
       </a>
       <button className="hamburger" aria-label="Menu" onClick={() => setMenuOpen(!menuOpen)}>
         <span />
@@ -1250,7 +1250,7 @@ function Footer({ lang, navigate }: { lang: Lang; navigate: (href: string) => vo
     <footer className="site-footer">
       <div className="footer-grid">
         <div>
-          <img src="/logo.jpg" alt="POMES logo" />
+          <img src="/logo.png" alt="POMES logo" />
           <h3>{company.shortName}</h3>
           <p>{lang === "vi" ? "Pomes tư vấn giải pháp cải tiến, thiết kế, chế tạo máy móc, hệ thống tự động và cung cấp thiết bị công nghiệp cho doanh nghiệp sản xuất." : "Pomes provides consulting for improvement solutions, machine design, fabrication, automation systems and industrial equipment for manufacturers."}</p>
         </div>
