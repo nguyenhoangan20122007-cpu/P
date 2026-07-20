@@ -1,9 +1,17 @@
 import type { Metadata, Viewport } from "next";
+import { Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
 
 const title = "CÔNG TY TNHH GIẢI PHÁP KỸ THUẬT POMES | Cải tiến, chế tạo máy và tự động hóa";
 const description =
   "CÔNG TY TNHH GIẢI PHÁP KỸ THUẬT POMES tư vấn giải pháp cải tiến, thiết kế, chế tạo máy móc, hệ thống tự động và cung cấp thiết bị công nghiệp cơ khí, điện, tự động, khí nén tại TP.HCM.";
+
+const beVietnamPro = Be_Vietnam_Pro({
+  subsets: ["vietnamese", "latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  display: "swap",
+  variable: "--font-be-vietnam",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://pomes-pi.vercel.app"),
@@ -55,7 +63,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi">
+    <html lang="vi" className={beVietnamPro.variable}>
       <body>{children}</body>
     </html>
   );

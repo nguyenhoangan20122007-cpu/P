@@ -12,6 +12,7 @@
   --lime: #d7df22;
   --white: #ffffff;
   --shadow: 0 18px 60px rgba(7, 23, 43, 0.14);
+  --font-vietnamese: var(--font-be-vietnam), "Be Vietnam Pro", "Segoe UI", Arial, sans-serif;
 }
 
 * {
@@ -26,7 +27,7 @@ body {
   margin: 0;
   background: var(--white);
   color: var(--ink);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-vietnamese);
 }
 
 button,
