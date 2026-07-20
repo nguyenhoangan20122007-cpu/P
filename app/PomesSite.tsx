@@ -377,9 +377,9 @@ function routeKey(pathname: string): PageKey {
   return "not-found";
 }
 
-export default function PomesSite() {
+export default function PomesSite({ initialPath = "/" }: { initialPath?: string }) {
   const [lang, setLang] = useState<Lang>("vi");
-  const [path, setPath] = useState("/");
+  const [path, setPath] = useState(initialPath);
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
@@ -387,6 +387,7 @@ export default function PomesSite() {
   const [isAuthed, setIsAuthed] = useState(false);
   const [filters, setFilters] = useState({ keyword: "", type: "", brand: "", application: "", status: "", price: "" });
   const [page, setPage] = useState(1);
+  const renderPath = typeof window === "undefined" ? initialPath : path;
 
   useEffect(() => {
     const initialLang = new URLSearchParams(window.location.search).get("lang");
@@ -413,9 +414,9 @@ export default function PomesSite() {
     setProperty("og:type", "website");
   }, [lang, path]);
 
-  const pageKey = routeKey(path);
-  const currentService = services.find((item) => path.endsWith(item.slug));
-  const currentProduct = products.find((item) => path.endsWith(item.slug));
+  const pageKey = routeKey(renderPath);
+  const currentService = services.find((item) => renderPath.endsWith(item.slug));
+  const currentProduct = products.find((item) => renderPath.endsWith(item.slug));
 
   const filteredProducts = useMemo(() => {
     const q = filters.keyword.toLowerCase();

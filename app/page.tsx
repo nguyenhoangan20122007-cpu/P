@@ -1,5 +1,5 @@
 import PomesSite from "./PomesSite";
 
 export default function Home() {
-  return <PomesSite />;
+  return <PomesSite initialPath="/" />;
 }

@@ -6,6 +6,7 @@ const description =
   "Công ty TNHH Pomes tư vấn giải pháp cải tiến, thiết kế, chế tạo máy móc, hệ thống tự động và cung cấp thiết bị công nghiệp cơ khí, điện, tự động, khí nén tại TP.HCM.";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://pomes-pi.vercel.app"),
   title,
   description,
   keywords: [
