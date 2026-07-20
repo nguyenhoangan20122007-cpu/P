@@ -1283,10 +1283,18 @@ function Footer({ lang, navigate }: { lang: Lang; navigate: (href: string) => vo
 function FloatingButtons() {
   return (
     <div className="floating-actions">
-      <a href={`tel:${contact.phone}`}>Call</a>
-      <a href={`https://zalo.me/${contact.phone}`}>Zalo</a>
-      <a href={contact.facebook}>Facebook</a>
-      <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>Top</button>
+      <a href={`tel:${contact.phone}`} aria-label="Call POMES">
+        <span className="float-long">Call</span><span className="float-short">Call</span>
+      </a>
+      <a href={`https://zalo.me/${contact.phone}`} aria-label="Chat Zalo">
+        <span className="float-long">Zalo</span><span className="float-short">Zalo</span>
+      </a>
+      <a href={contact.facebook} aria-label="Facebook POMES">
+        <span className="float-long">Facebook</span><span className="float-short">FB</span>
+      </a>
+      <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} aria-label="Back to top">
+        <span className="float-long">Top</span><span className="float-short">Top</span>
+      </button>
     </div>
   );
 }
