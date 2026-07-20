@@ -808,6 +808,7 @@ p {
 .profile-visual,
 .detail-image,
 .workflow-preview {
+  background: linear-gradient(135deg, #eef5fb, #ffffff);
   border: 1px solid var(--line);
   border-radius: 8px;
   box-shadow: var(--shadow);

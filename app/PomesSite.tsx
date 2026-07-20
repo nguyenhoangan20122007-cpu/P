@@ -1181,7 +1181,7 @@ function ProcessTimeline({ lang }: { lang: Lang }) {
         ))}
       </div>
       <div className="workflow-preview">
-        <img src="/ppt-assets/workflow.webp" alt={lang === "vi" ? "Quy trình làm việc POMES từ hồ sơ năng lực" : "POMES workflow from company profile"} loading="lazy" />
+        <img src="/ppt-assets/workflow.webp" alt={lang === "vi" ? "Quy trình làm việc POMES từ hồ sơ năng lực" : "POMES workflow from company profile"} loading="eager" decoding="async" />
       </div>
     </section>
   );
