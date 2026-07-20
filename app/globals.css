@@ -84,7 +84,7 @@ img {
 .brand img {
   height: 62px;
   object-fit: contain;
-  width: 78px;
+  width: 72px;
 }
 
 .main-nav {
@@ -1253,7 +1253,7 @@ p {
   }
 
   .brand img {
-    width: 72px;
+    width: 68px;
   }
 
   .hamburger {
@@ -1325,12 +1325,12 @@ p {
     grid-template-columns: 1fr auto;
     height: auto;
     min-height: 72px;
-    padding: 10px 16px;
+    padding: 9px 16px 11px;
   }
 
   .brand img {
-    height: 58px;
-    width: 74px;
+    height: 64px;
+    width: 72px;
   }
 
   .hamburger {
@@ -1365,12 +1365,12 @@ p {
 
   .hero,
   .page-hero {
-    padding-top: 170px;
+    padding-top: 176px;
   }
 
   .hero-bg {
     background:
-      linear-gradient(180deg, rgba(7, 23, 43, 0.98) 0%, rgba(7, 23, 43, 0.86) 58%, rgba(7, 23, 43, 0.52) 100%),
+      linear-gradient(180deg, rgba(7, 23, 43, 0.98) 0%, rgba(7, 23, 43, 0.9) 58%, rgba(7, 23, 43, 0.66) 100%),
       url("/pomes-hero.png") center / cover no-repeat;
   }
 
@@ -1413,6 +1413,11 @@ p {
     padding-top: 72px;
     padding-bottom: 116px;
   }
+
+  .service-media,
+  .pathway-card {
+    min-height: 0;
+  }
 }
 
 @media (max-width: 560px) {
@@ -1426,12 +1431,13 @@ p {
   }
 
   .site-header {
-    padding: 8px 14px;
+    border-bottom-color: rgba(177, 188, 204, 0.55);
+    padding: 8px 14px 10px;
   }
 
   .brand img {
-    height: 54px;
-    width: 68px;
+    height: 68px;
+    width: 76px;
   }
 
   .header-actions {
@@ -1447,6 +1453,46 @@ p {
   .lang-toggle,
   .icon-button {
     min-height: 48px;
+  }
+
+  .hero {
+    min-height: 0;
+    padding: 182px 16px 48px;
+  }
+
+  .page-hero {
+    padding: 174px 16px 48px;
+  }
+
+  .hero-content {
+    max-width: none;
+  }
+
+  .hero h1 {
+    font-size: clamp(30px, 9vw, 38px);
+    line-height: 1.12;
+  }
+
+  .hero .slogan {
+    font-size: 21px;
+    line-height: 1.34;
+  }
+
+  .hero p,
+  .page-hero p,
+  .section p,
+  .detail-main li,
+  .detail-side,
+  .empty-state p,
+  .legal p {
+    font-size: 15px;
+    line-height: 1.68;
+  }
+
+  .section h2,
+  .page-hero h1 {
+    font-size: clamp(27px, 8vw, 36px);
+    line-height: 1.16;
   }
 
   .hero-actions,
@@ -1474,6 +1520,128 @@ p {
     grid-template-columns: 1fr;
   }
 
+  .service-grid,
+  .product-grid,
+  .pathway-grid,
+  .timeline,
+  .metric-grid,
+  .profile-points,
+  .capability-list {
+    gap: 16px;
+  }
+
+  .service-card,
+  .product-card,
+  .pathway-card,
+  .timeline article,
+  .workflow-preview,
+  .detail-image {
+    scroll-margin-top: 158px;
+  }
+
+  .service-card,
+  .product-card,
+  .pathway-card,
+  .timeline article,
+  .profile-points article,
+  .capability-list article {
+    border-radius: 8px;
+    box-shadow: 0 12px 28px rgba(7, 23, 43, 0.09);
+  }
+
+  .service-card {
+    min-height: 0;
+  }
+
+  .service-media {
+    aspect-ratio: 16 / 10;
+    height: auto;
+    padding: 0;
+  }
+
+  .service-media::after {
+    background: linear-gradient(180deg, rgba(7, 23, 43, 0.02), rgba(7, 23, 43, 0.22));
+  }
+
+  .service-media span,
+  .product-visual span {
+    display: none;
+  }
+
+  .service-card h3,
+  .service-card p {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .service-card h3,
+  .product-card h3,
+  .pathway-card h3,
+  .timeline h3 {
+    font-size: 20px;
+    line-height: 1.28;
+  }
+
+  .service-card button {
+    margin-top: 18px;
+    padding-left: 18px;
+  }
+
+  .product-visual {
+    aspect-ratio: 16 / 10;
+    padding: 0;
+  }
+
+  .product-visual::after {
+    background: linear-gradient(180deg, rgba(7, 23, 43, 0.02), rgba(7, 23, 43, 0.2));
+  }
+
+  .product-body,
+  .contact-form,
+  .quote-form,
+  .admin-login,
+  .detail-side {
+    padding: 18px;
+  }
+
+  .product-card dl {
+    gap: 12px;
+  }
+
+  .pathway-card {
+    grid-template-rows: auto 1fr;
+  }
+
+  .pathway-card img {
+    aspect-ratio: 16 / 10;
+    height: auto;
+  }
+
+  .timeline article {
+    min-height: 0;
+    padding: 20px;
+  }
+
+  .profile-visual,
+  .detail-image,
+  .workflow-preview {
+    box-shadow: 0 12px 28px rgba(7, 23, 43, 0.1);
+  }
+
+  .detail-image {
+    margin-bottom: 18px;
+  }
+
+  .workflow-preview {
+    margin-top: 18px;
+  }
+
+  .quick-contact {
+    background:
+      linear-gradient(180deg, rgba(7, 23, 43, 0.98), rgba(7, 23, 43, 0.94)),
+      url("/pomes-hero.png") center / cover no-repeat;
+  }
+
   .floating-actions {
     background: rgba(255, 255, 255, 0.94);
     border: 1px solid rgba(177, 188, 204, 0.62);
@@ -1488,6 +1656,12 @@ p {
     transform: translateX(-50%);
     width: auto;
     z-index: 60;
+  }
+
+  .floating-actions:not(.is-after-intro) {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 10px);
   }
 
   .floating-actions.is-near-footer {

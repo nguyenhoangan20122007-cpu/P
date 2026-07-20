@@ -515,7 +515,7 @@ export default function PomesSite({ initialPath = "/" }: { initialPath?: string 
             "@type": "Organization",
             name: company.legalName.vi,
             alternateName: [company.foreignName, company.shortName],
-            url: typeof window !== "undefined" ? window.location.origin : "",
+            url: "https://pomes.vn",
             logo: "/logo-pomes-mark.png",
             telephone: contact.phone,
             email: contact.email,
@@ -1282,6 +1282,7 @@ function Footer({ lang, navigate }: { lang: Lang; navigate: (href: string) => vo
 
 function FloatingButtons() {
   const [nearFooter, setNearFooter] = useState(false);
+  const [afterIntro, setAfterIntro] = useState(false);
 
   useEffect(() => {
     const footer = document.querySelector(".site-footer");
@@ -1294,8 +1295,15 @@ function FloatingButtons() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const update = () => setAfterIntro(window.scrollY > 360);
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
+  }, []);
+
   return (
-    <div className={`floating-actions${nearFooter ? " is-near-footer" : ""}`}>
+    <div className={`floating-actions${nearFooter ? " is-near-footer" : ""}${afterIntro ? " is-after-intro" : ""}`}>
       <a href={`tel:${contact.phone}`} aria-label="Call POMES">
         <span className="float-long">Call</span><span className="float-short">Call</span>
       </a>
